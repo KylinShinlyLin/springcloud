@@ -1,0 +1,29 @@
+server:
+  port: 8900
+
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#  server:
+#    eureka���ұ�������
+#    enableSelfPreservation: false
+
+
+spring:
+  application:
+    name: eruekaserver
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123456
